@@ -1,6 +1,8 @@
 # Markdown Cheatsheet
 
 ## Headings
+Use # to denote a heading.  You can add more #s to decrease the heading level.  Note markdown requires a space after the #.  Some markdown interpreters will render a heading appropriately if the space is omited.  A # without a space is sometimes interpreted as a #hashtag.
+
 ```markdown
 # Heading 1
 ## Heading 2
@@ -68,17 +70,17 @@ Rendered:
 ## Links and Images
 ### Link
 ```markdown
-[Link text](https://example.com)
+[Link text](https://cyberark.com)
 ```
 Rendered:
-[Link text](https://example.com)
+[Link text](https://cyberark.com)
 
 ### Image
 ```markdown
-![Alt text](https://example.com/image.jpg)
+![Alt text](https://www.cyberark.com/wp-content/uploads/2024/10/cyberark-logo.svg)
 ```
 Rendered:
-![Alt text](https://example.com/image.jpg)
+![Alt text](https://www.cyberark.com/wp-content/uploads/2024/10/cyberark-logo.svg)
 
 ---
 
@@ -148,3 +150,15 @@ Rendered:
 - [ ] Task 2
 - [ ] Task 3
 
+## Page Break
+Markdown does support page breaks as they have no meaning in the way markdown files are intended to be used.  You can, however, include HTML in a markdown file and it will be rendered appropriately.  Unfortunately, it makes the markdown file more difficult to read unrendered.  To solve this the Python conversion script will replace ::: pagebreak ::: with the appropriate HTML during the build.  To include a page break simply use 
+```markdown
+::: pagebreak :::
+```
+
+## Include Files
+To aid the  construction of very large lab manuals, you can include external files within another markdown file
+```markdown
+::: include filename.md :::
+```
+This will insert the entire content of that other markdown file at that point.
