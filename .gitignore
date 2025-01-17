@@ -1,0 +1,7 @@
+.venv/
+.vscode/
+
+.pdf_config.yml
+.publish.yml
+*.html
+*.pdf
