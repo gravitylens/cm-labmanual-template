@@ -1,7 +1,11 @@
 import markdown
 import re
 
-def include_files(content):
+def include_files(content, depth=0, max_depth=5):
+    if depth > max_depth:
+        print("Maximum include depth reached.")
+        exit()
+
     include_pattern = re.compile(r'::: include (.+?) :::')
     while True:
         match = include_pattern.search(content)
@@ -11,6 +15,7 @@ def include_files(content):
         try:
             with open(filename, 'r') as f:
                 included_content = f.read()
+            included_content = include_files(included_content, depth + 1, max_depth)
             content = content[:match.start()] + included_content + content[match.end():]
         except FileNotFoundError:
             print(f"Warning: {filename} not found.")

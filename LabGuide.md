@@ -17,17 +17,24 @@ Describe the story or scenario that will play out in the lab exercises.
 
 ::: pagebreak :::
 
-## Lab 1:  Title for Lab 1
+## Lab 1:  Logging into your tenant
 Provide clear and concise steps to complete the lab.  It is best to use a seperate page for each step.  Give each step a level 3 (###) heading
 ::: pagebreak :::
-### Step 1
-Do a thing
-::: pagebreak :::
-### Step 2
-Do another thing
+
+### Log on to your Tenant
+Browse to your tenant and log in.
+
+|   Parameter  | Value               |
+|--------------|---------------------|
+| **URL**      | %{metadata:app_url} |
+| **Username** | %{metadata:app_uid} |
+| **Password** | %{metadata:app_pw}  |
+
 ::: pagebreak :::
 
-## Lab 2:  Title for Lab 2
+### Log out of the Tenant
+Close your browser
+
 ::: pagebreak :::
 
 ## What's Next?
@@ -35,4 +42,3 @@ Do another thing
 Thank you for completing the lab, please visit our [Training Portal](https://training.cyberark.com) to explore other CyberArk training offerings. 
 
 Feel free to use this environment as a sandbox until it expires.
-
