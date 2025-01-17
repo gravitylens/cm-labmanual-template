@@ -19,11 +19,19 @@ Describe the story or scenario that will play out in the lab exercises.
 
 ## Lab 1:  Title for Lab 1
 Provide clear and concise steps to complete the lab.  It is best to use a seperate page for each step.  Give each step a level 3 (###) heading
-
+::: pagebreak :::
+### Step 1
+Do a thing
+::: pagebreak :::
+### Step 2
+Do another thing
 ::: pagebreak :::
 
 ## Lab 2:  Title for Lab 2
-
 ::: pagebreak :::
 
-Thank you for completing the lab, feel free to use this environment as a sandbox until it expires
+## What's Next?
+
+Thank you for completing the lab, please visit our [Training Portal](https://training.cyberark.com) to explore other CyberArk training offerings. 
+
+Feel free to use this environment as a sandbox until it expires.
