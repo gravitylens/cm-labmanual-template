@@ -38,6 +38,12 @@ html_content = markdown.markdown(markdown_content, extensions=['tables', 'codehi
 # Replace <code> blocks with <pre> blocks
 #html_content = html_content.replace("<code>", "<pre>").replace("</code>", "</pre>")
 
+# Replace ~text~ with <x-copy-text> tags
+html_content = re.sub(r'~([^~]+)~', r'<x-copy-text>\1</x-copy-text>', html_content)
+
+# Replace ^^text^^ with <x-copy-text> tags
+html_content = re.sub(r'\^\^([^\^]+)\^\^', r'<x-copy-text>\1</x-copy-text>', html_content)
+
 # Write the HTML to a file
 with open("LabGuide.html", "w") as f:
     f.write(html_content)

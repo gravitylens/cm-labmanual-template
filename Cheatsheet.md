@@ -162,3 +162,10 @@ To aid the  construction of very large lab manuals, you can include external fil
 ::: include filename.md :::
 ```
 This will insert the entire content of that other markdown file at that point.
+
+## Copyable Text
+To denote text that can be copied from the guide into the Skytap machine by clicking on it, use double carets `^^` around the text. For example:
+```markdown
+^^copyable text^^
+```
+This will be converted to an `<x-copy-text>` tag in the HTML output, making it easy for users to copy the text by clicking on it.
