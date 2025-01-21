@@ -1,0 +1,9 @@
+placeholder,testvalue
+%{access_url},
+%{course_name},Test Course
+%{user_identifier},
+%{password},
+%{template_name},
+%{integration_data:app_url},https://ilovecpc.com
+%{integration_data:app_uid},user01
+%{integration_data:app_pw},CyberArk1

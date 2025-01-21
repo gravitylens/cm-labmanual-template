@@ -26,9 +26,9 @@ Browse to your tenant and log in.
 
 |   Parameter  | Value               |
 |--------------|---------------------|
-| **URL**      | ^^%{metadata:app_url}^^ |
-| **Username** | ^^%{metadata:app_uid}^^ |
-| **Password** | ^^%{metadata:app_pw}^^  |
+| **URL**      | ^^%{integration_data:app_url}^^ |
+| **Username** | ^^%{integration_data:app_uid}^^ |
+| **Password** | ^^%{integration_data:app_pw}^^  |
 
 ::: pagebreak :::
 

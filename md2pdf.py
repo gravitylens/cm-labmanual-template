@@ -1,6 +1,8 @@
 import os
 import yaml
+import csv
 from weasyprint import HTML, CSS
+import re
 
 # Load configuration from .publish.yml
 pdf_config_file = '.pdf_config.yml'
@@ -30,7 +32,33 @@ css = CSS(string='''
     }
 ''')
 
-# Convert HTML to PDF with CSS
+# Read the HTML file
 html_file = 'LabGuide.html'
-HTML(html_file).write_pdf(pdf_file, stylesheets=[css])
+with open(html_file, 'r') as f:
+    html_content = f.read()
+
+# Load Skytap variables from skytapvariables.csv
+variables = {}
+with open('skytapvariables.csv', mode='r') as infile:
+    reader = csv.reader(infile)
+    for rows in reader:
+        variables[rows[0]] = rows[1]
+
+# Replace %{parametername} placeholders with corresponding values
+for key, value in variables.items():
+    html_content = html_content.replace(f"%{{{key}}}", value)
+
+# Replace ^^text^^ with <x-copy-text> tags for PDF generation
+pdf_content = re.sub(r'\^\^([^\^]+)\^\^', r'<x-copy-text>\1</x-copy-text>', html_content)
+
+# Write the modified content to a temporary file for PDF generation
+temp_html_file = 'LabGuide_for_pdf.html'
+with open(temp_html_file, 'w') as f:
+    f.write(pdf_content)
+
+# Convert HTML to PDF with CSS
+HTML(temp_html_file).write_pdf(pdf_file, stylesheets=[css])
 print(f"PDF file '{pdf_file}' has been created successfully.")
+
+# Clean up the temporary file
+os.remove(temp_html_file)
