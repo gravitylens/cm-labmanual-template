@@ -34,6 +34,7 @@ markdown_content = markdown_content.replace("::: pagebreak :::", "<hr data-page-
 
 # Convert Markdown to HTML
 html_content = markdown.markdown(markdown_content)
+html_content = html_content.replace("<code>", "<pre>").replace("</code>", "</pre>")
 
 # Write the HTML to a file
 with open("LabGuide.html", "w") as f:
