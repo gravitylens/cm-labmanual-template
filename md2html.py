@@ -32,9 +32,11 @@ markdown_content = include_files(markdown_content)
 # Replace ::: pagebreak ::: with <hr data-page-break="">
 markdown_content = markdown_content.replace("::: pagebreak :::", "<hr data-page-break=\"\">")
 
-# Convert Markdown to HTML
-html_content = markdown.markdown(markdown_content)
-html_content = html_content.replace("<code>", "<pre>").replace("</code>", "</pre>")
+# Convert Markdown to HTML with table support, code highlighting, and fenced code blocks
+html_content = markdown.markdown(markdown_content, extensions=['tables', 'codehilite', 'fenced_code'])
+
+# Replace <code> blocks with <pre> blocks
+#html_content = html_content.replace("<code>", "<pre>").replace("</code>", "</pre>")
 
 # Write the HTML to a file
 with open("LabGuide.html", "w") as f:

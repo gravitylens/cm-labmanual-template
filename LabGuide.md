@@ -43,6 +43,6 @@ Thank you for completing the lab, please visit our [Training Portal](https://tra
 
 Feel free to use this environment as a sandbox until it expires.
 
-```
-::: include testcode.sh :::
+```python
+::: include md2pdf.py :::
 ```
