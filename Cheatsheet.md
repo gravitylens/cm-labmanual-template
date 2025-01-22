@@ -162,3 +162,5 @@ This will be converted to an `<x-copy-text>` tag in the HTML output, making it e
 #TODO: Info and Warning Blocks
 
 #TODO: Script and Command Buttons
+
+#TODO: Quizes and other gates

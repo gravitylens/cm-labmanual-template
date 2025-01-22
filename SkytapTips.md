@@ -8,7 +8,7 @@ When you arrive in the lab environment, the machines will have already booted in
 ### Connecting to a Virtual Machine
 Click on the large monitor icon to connect to a virtual machine with the HTML 5 client.  This will provide a **console** connection to the virtual machine.
 
-![picture 3](images/Skytap-Console-Connect.png)  
+![alt text](images/Skytap-Console-Connect.png)  
 
 Use the Ctrl-Alt-Del button on the tool bar to send a Ctrl-Alt-Del to the machine.
 
@@ -18,7 +18,7 @@ The clipboard icon will allow you to copy and paste text between your computer a
 
 ![alt text](images/Skytap-Clipboard.png)
 
-The full screen icon will resize your virtual screen to adapt to your computer’s screen settings to avoid scrolling.
+The full screen icon will resize your virtual screen to adapt to your computer's screen settings to avoid scrolling.
 
 ![alt text](images/Skytap-Resize.png)
 
@@ -31,13 +31,13 @@ You may need to adjust your bandwidth setting on slower connections.
 ### International Users
 By default, the lab machines are configured to use a US English keyboard layout.  If you use a machine from a country other than the US, you may experience odd behavior from your lab machines.  The solution is to install the keyboard layout for your keyboard on our lab machines.  Follow the process below to find and configure the correct keyboard layout for your keyboard.
 
-From the Start Menu, go to Settings ► Time & Language ►  Language ► Add a language.
+From the Start Menu, go to Settings > Time & Language > Language > Add a language.
 
-![picture 1](images/Windows-Add-Language.png)  
+![alt text](images/Windows-Add-Language.png)  
 
 Select your language.  Click Next.  You can uncheck the options for voice and handwriting and then click Install.
 
-![picture 2](images/Windows-Select-Language.png)  
+![alt text](images/Windows-Select-Language.png)  
 
 >[If you use an alternate keyboard layout (e.g., AZERTY, Dvorak), you can click the options next to your language to install that.  Otherwise, close the Language window.
 
