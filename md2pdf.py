@@ -3,6 +3,7 @@ import yaml
 import csv
 from weasyprint import HTML, CSS
 import re
+from datetime import datetime
 
 # Load configuration from .publish.yml
 pdf_config_file = '.pdf_config.yml'
@@ -20,6 +21,18 @@ if not pdf_file:
     with open(pdf_config_file, 'w') as file:
         config = {'pdf_file': pdf_file}
         yaml.safe_dump(config, file)
+
+# Read the CSS file
+with open("/Users/jason.niles/Projects/cm-labmanual-template/styles.css", "r") as file:
+    css_content = file.read()
+
+# Replace the placeholder with the current year
+current_year = datetime.now().year
+css_content = css_content.replace("YEAR_PLACEHOLDER", str(current_year))
+
+# Write the updated CSS back to the file
+with open("/Users/jason.niles/Projects/cm-labmanual-template/styles.css", "w") as file:
+    file.write(css_content)
 
 # Load CSS from external file
 css_file = 'styles.css'

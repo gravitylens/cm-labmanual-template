@@ -1,7 +1,7 @@
 @page {
     margin: 1in;
     @bottom-left {
-        content: "CyberArk University";
+        content: "© 2025 CyberArk Software, Inc.";
         font-size: 12pt;
         color: #333;
     }
@@ -17,7 +17,7 @@ body {
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Arial', sans-serif;
-    color: #2c3e50;
+    color: #0033A0;
 }
 table {
     width: 100%;
@@ -34,11 +34,11 @@ th, td {
 tr:nth-child(even) {
     background-color: #f9f9f9;
 }
-pre {
-    background-color: #f4f4f4;
-    border: 1px solid #ddd;
-    padding: 10px;
-    overflow-x: auto;
+pre, code {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Menlo', 'Consolas', 'Courier New', monospace;
+    font-size: 8pt;
 }
 blockquote {
     border-left: 4px solid #ccc;

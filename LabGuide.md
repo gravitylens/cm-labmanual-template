@@ -1,5 +1,16 @@
+![Alt text](https://www.cyberark.com/wp-content/uploads/2024/10/cyberark-logo.svg)
+
 # %{course_name} Instruction Manual
-Welcome to %{course_name}.  This lab environment has been provisioned just for you.
+
+Welcome to the %{course_name}.  This lab environment is available for you to use 24x7 subject to the following limitations.
+
+- Lab environment will expire after **14 day**s
+- Total runtime is limited to **40 hours**.
+- Lab machines will shutdown after **two hours** of inactivity.
+
+TODO: Add Course Manager Tips
+
+::: pagebreak ::: 
 
 ::: include SkytapTips.md :::
 
@@ -42,3 +53,7 @@ Close your browser
 Thank you for completing the lab, please visit our [Training Portal](https://training.cyberark.com) to explore other CyberArk training offerings. 
 
 Feel free to use this environment as a sandbox until it expires.
+
+```python
+::: include md2pdf.py :::
+```
