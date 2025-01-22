@@ -42,7 +42,3 @@ Close your browser
 Thank you for completing the lab, please visit our [Training Portal](https://training.cyberark.com) to explore other CyberArk training offerings. 
 
 Feel free to use this environment as a sandbox until it expires.
-
-```python
-::: include md2pdf.py :::
-```

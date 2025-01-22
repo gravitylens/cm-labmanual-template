@@ -135,20 +135,8 @@ ___
 Rendered:
 ---
 ***
+
 ___
-
----
-
-## Checklists
-```markdown
-- [x] Task 1
-- [ ] Task 2
-- [ ] Task 3
-```
-Rendered:
-- [x] Task 1
-- [ ] Task 2
-- [ ] Task 3
 
 ## Page Break
 Markdown does support page breaks as they have no meaning in the way markdown files are intended to be used.  You can, however, include HTML in a markdown file and it will be rendered appropriately.  Unfortunately, it makes the markdown file more difficult to read unrendered.  To solve this the Python conversion script will replace ::: pagebreak ::: with the appropriate HTML during the build.  To include a page break simply use 
@@ -169,3 +157,8 @@ To denote text that can be copied from the guide into the Skytap machine by clic
 ^^copyable text^^
 ```
 This will be converted to an `<x-copy-text>` tag in the HTML output, making it easy for users to copy the text by clicking on it.
+
+
+#TODO: Info and Warning Blocks
+
+#TODO: Script and Command Buttons

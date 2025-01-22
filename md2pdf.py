@@ -21,16 +21,9 @@ if not pdf_file:
         config = {'pdf_file': pdf_file}
         yaml.safe_dump(config, file)
 
-# Define CSS to scale images
-css = CSS(string='''
-    img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-''')
+# Load CSS from external file
+css_file = 'styles.css'
+css = CSS(filename=css_file)
 
 # Read the HTML file
 html_file = 'LabGuide.html'
@@ -46,7 +39,7 @@ with open('skytapvariables.csv', mode='r') as infile:
 
 # Replace %{parametername} placeholders with corresponding values
 for key, value in variables.items():
-    html_content = html_content.replace(f"%{{{key}}}", value)
+    html_content = html_content.replace(f"{key}", value)
 
 # Replace ^^text^^ with <x-copy-text> tags for PDF generation
 pdf_content = re.sub(r'\^\^([^\^]+)\^\^', r'<x-copy-text>\1</x-copy-text>', html_content)

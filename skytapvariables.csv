@@ -1,6 +1,6 @@
 placeholder,testvalue
 %{access_url},
-%{course_name},Test Course
+%{course_name},"Test Course"
 %{user_identifier},
 %{password},
 %{template_name},
