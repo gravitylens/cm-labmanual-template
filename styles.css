@@ -2,12 +2,12 @@
     margin: 1in;
     @bottom-left {
         content: "© 2025 CyberArk Software, Inc.";
-        font-size: 12pt;
+        font-size: 8pt;
         color: #333;
     }
     @bottom-right {
         content: counter(page);
-        font-size: 12pt;
+        font-size: 8pt;
         color: #333;
     }
 }

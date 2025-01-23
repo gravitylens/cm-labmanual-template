@@ -158,6 +158,13 @@ To denote text that can be copied from the guide into the Skytap machine by clic
 ```
 This will be converted to an `<x-copy-text>` tag in the HTML output, making it easy for users to copy the text by clicking on it.
 
+## Attachments
+You can attach downloadable files.  The syntax is the same as any other web link.  If you reference a link to your local file system, the publish script will upload the file to Skytap and properly reformat the link to download the file from skytap.  You could also just reference a link to an ordinary web page
+
+```markdown
+[Download The Guide](./LabGuide.pdf)
+```
+
 
 #TODO: Info and Warning Blocks
 

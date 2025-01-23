@@ -1,4 +1,4 @@
-![Alt text](https://www.cyberark.com/wp-content/uploads/2024/10/cyberark-logo.svg)
+![CyberArk Logo](https://www.cyberark.com/wp-content/uploads/2024/10/cyberark-logo.svg)
 
 # %{course_name} Instruction Manual
 
@@ -7,6 +7,10 @@ Welcome to the %{course_name}.  This lab environment is available for you to use
 - Lab environment will expire after **14 day**s
 - Total runtime is limited to **40 hours**.
 - Lab machines will shutdown after **two hours** of inactivity.
+
+Once the lab has expired it will be deleted and cannot be recovered.
+
+::: pagebreak :::
 
 TODO: Add Course Manager Tips
 
@@ -35,8 +39,8 @@ Provide clear and concise steps to complete the lab.  It is best to use a sepera
 ### Log on to your Tenant
 Browse to your tenant and log in.
 
-|   Parameter  | Value               |
-|--------------|---------------------|
+|   Parameter  | Value                           |
+|--------------|---------------------------------|
 | **URL**      | ^^%{integration_data:app_url}^^ |
 | **Username** | ^^%{integration_data:app_uid}^^ |
 | **Password** | ^^%{integration_data:app_pw}^^  |
@@ -57,3 +61,5 @@ Feel free to use this environment as a sandbox until it expires.
 ```python
 ::: include md2pdf.py :::
 ```
+
+[Download the Guide](./TestThing.pdf)
