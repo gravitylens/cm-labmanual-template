@@ -71,7 +71,7 @@ Rendered:
 [Link text](https://www.cyberark.com)
 
 ### Image
-When including images, do not bother resizing them to fit the screen.  Include files that contain the full resolution of the screen capture.  Skytap and the PDF rendering script will resize images to best fit the available space.  Skytap will also allow the user to pop out to fullscreen images that cannot be displayed readbly within the lab guide panel.  These fullscreen images will want the maxiumum quality possible.
+When including images, do not bother resizing them to fit the screen.  Include files that contain the full resolution of the screen capture.  Skytap and the PDF rendering script will resize images to best fit the available space.  Skytap will also allow the user to pop out to fullscreen images that cannot be displayed readably within the lab guide panel.  These fullscreen images will want the maxiumum quality possible.
 ```markdown
 ![Alt text](https://www.cyberark.com/wp-content/uploads/2024/10/cyberark-logo.svg)
 ```
