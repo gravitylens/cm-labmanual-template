@@ -47,8 +47,15 @@ Browse to your tenant and log in.
 
 ::: pagebreak :::
 
-### Log out of the Tenant
-Close your browser
+### Code Block Example
+```python
+::: include md2pdf.py :::
+```
+
+::: pagebreak :::
+
+### Attachment Example
+[Download the Guide](./TestThing.pdf)
 
 ::: pagebreak :::
 
@@ -57,9 +64,3 @@ Close your browser
 Thank you for completing the lab, please visit our [Training Portal](https://training.cyberark.com) to explore other CyberArk training offerings. 
 
 Feel free to use this environment as a sandbox until it expires.
-
-```python
-::: include md2pdf.py :::
-```
-
-[Download the Guide](./TestThing.pdf)
