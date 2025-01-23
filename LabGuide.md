@@ -4,28 +4,15 @@
 
 Welcome to the %{course_name}.  This lab environment is available for you to use 24x7 subject to the following limitations.
 
-- Lab environment will expire after **14 day**s
+- Lab environment will expire after **14 days**
 - Total runtime is limited to **40 hours**.
 - Lab machines will shutdown after **two hours** of inactivity.
 
-Once the lab has expired it will be deleted and cannot be recovered.
+>Warning: Once the lab has expired it will be automatically deleted and cannot be recovered.
 
 ::: pagebreak :::
-
-TODO: Add Course Manager Tips
-
-::: pagebreak ::: 
 
 ::: include SkytapTips.md :::
-
-## Overview
-Provide a brief description of the lab and what learners will achieve by completing it.
-
-### Objectives
-- Objective 1
-- Objective 2
-
-::: pagebreak :::
 
 ## Introduction
 Describe the story or scenario that will play out in the lab exercises.
@@ -55,7 +42,7 @@ Browse to your tenant and log in.
 ::: pagebreak :::
 
 ### Attachment Example
-[Download the Guide](./TestThing.pdf)
+[Download the Guide](./LabGuide.pdf)
 
 ::: pagebreak :::
 

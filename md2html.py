@@ -26,8 +26,12 @@ def include_files(content, depth=0, max_depth=5):
 with open("LabGuide.md", "r") as f:
     markdown_content = f.read()
 
+
 # Replace ::: include filename.md ::: with the content of the referenced file
 markdown_content = include_files(markdown_content)
+
+# Remove comment lines
+markdown_content = re.sub(r'\[\\\\]: #.*', '', markdown_content)
 
 # Replace ::: pagebreak ::: with <hr data-page-break="">
 markdown_content = markdown_content.replace("::: pagebreak :::", "<hr data-page-break=\"\">")

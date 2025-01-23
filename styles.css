@@ -12,12 +12,15 @@
     }
 }
 body {
-    font-family: 'DejaVu Sans', 'Arial Unicode MS', sans-serif;
+    font-family: 'Arial', 'Helvetica', sans-serif; /* Use a different font that supports bold weights */
     line-height: 1.6;
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Arial', sans-serif;
     color: #0033A0;
+}
+h2 {
+    page-break-before: always;
 }
 table {
     width: 100%;
@@ -34,7 +37,7 @@ th, td {
 tr:nth-child(even) {
     background-color: #f9f9f9;
 }
-pre, code {
+pre {
     background-color: #000;
     color: #fff;
     font-family: 'Menlo', 'Consolas', 'Courier New', monospace;
@@ -63,6 +66,9 @@ img {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+strong, b {
+    font-weight: bold;
 }
 .custom-class {
     /* Add custom styles here */
