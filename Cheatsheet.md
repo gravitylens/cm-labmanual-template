@@ -22,18 +22,18 @@ Rendered:
 
 ## Text Formatting
 ```markdown
-**Bold** or __Bold__
-*Italic* or _Italic_
+**Bold**
+*Italic*
 ***Bold and Italic***
 ~~Strikethrough~~
-`Inline code`
+`monospaced`
 ```
 Rendered:
 **Bold**
 *Italic*
 ***Bold and Italic***
 ~~Strikethrough~~
-`Inline code`
+`monospaced`
 
 ## Lists
 ### Unordered List
