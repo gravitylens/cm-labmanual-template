@@ -13,10 +13,10 @@ The purpose of this repository is to help you create structured and well-formatt
 - **md2html.py**: A Python script that converts the markdown file (`LabGuide.md`) to an HTML file (`LabGuide.html`). It also processes includes and page breaks.
 - **md2pdf.py**: A Python script that converts the HTML file (`LabGuide.html`) to a PDF file. It also processes placeholders and applies CSS for styling.  It will prompt for a PDF filename on first run and store that filename in (`.pdf_config.yml`) for future runs.
 - **styles.css**: A CSS file that defines the styles for the PDF output. It includes styles for fonts, tables, images, and other elements.
-- **skytapvariables.csv**: A CSV file that contains placeholders and their corresponding values. These values are used to replace placeholders in the markdown and HTML files.
+- **skytapvariables.csv**: A CSV file that contains placeholders and their corresponding values. These values are used to replace dynamic Skytap placeholders with sample values when generating the PDF.
 - **images/**: A folder to store images used in the lab manual. The images can be referenced in the markdown file using relative paths.
-- **publish.sh**: A shell script to upload the lab manual to a Skytap Course Manager title. It processes the markdown file, converts it to HTML and PDF, and uploads the files to Skytap.
-- **course_manual_manager/**: This folder is provided by Skytap and contnains the code to upload an HTML manual, and any attachments it references, to a particular Skytap Course Manager Title.  It will prompt you for details on first run and store those details in (`.publish.yml`) for future runs.
+- **publish.sh**: A shell script that runs the entire publication process.  It will call the python scripts to generate the HTML and PDF version of the lab manual, then use the Skytap provided container to upload the HTML and attachments to the Skytap Course Manager Title.
+- **course_manual_manager/**: This folder is provided by Skytap and contains the code to upload an HTML manual, and any attachments it references, to a particular Skytap Course Manager Title.  It will prompt you for details on first run and store those details in (`.publish.yml`) for future runs.
 
 ## Instructions
 1. Refer to the [Cheatsheet](./Cheatsheet.md) for instructions on how to author a markdown file.

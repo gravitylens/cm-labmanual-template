@@ -1,5 +1,6 @@
 # Markdown Instructions
 Markdown is simple markup language most commonly used for documentation.  It allows a plain text document to contain formatting markups that are simpler to use than HTML and leave the text file in a format that is still human readable.  Using a markup language allows for documents to contain rich formatting, but take all style decisions away from the author.  Style choices configured in the markdown interpreter that will render the document into HTML.  This allows for multiple authors to use consistent formatting choices across all documentation and to work in a file format that is completely platform independent.
+
 ## Headings
 Use # to denote a heading. You can add more #s to decrease the heading level. Note markdown requires a space after the #. While some markdown interpreters will render a heading appropriately if the space is omitted, a # without a space may be interpreted as a #hashtag.
 
@@ -23,16 +24,25 @@ Rendered:
 ## Text Formatting
 ```markdown
 **Bold**
+
 *Italic*
+
 ***Bold and Italic***
+
 ~~Strikethrough~~
+
 `monospaced`
 ```
 Rendered:
+
 **Bold**
+
 *Italic*
+
 ***Bold and Italic***
+
 ~~Strikethrough~~
+
 `monospaced`
 
 ## Lists
@@ -68,6 +78,7 @@ Rendered:
 [Link text](https://www.cyberark.com)
 ```
 Rendered:
+
 [Link text](https://www.cyberark.com)
 
 ### Image
@@ -76,6 +87,7 @@ When including images, do not bother resizing them to fit the screen.  Include f
 ![Alt text](https://www.cyberark.com/wp-content/uploads/2024/10/cyberark-logo.svg)
 ```
 Rendered:
+
 ![Alt text](https://www.cyberark.com/wp-content/uploads/2024/10/cyberark-logo.svg)
 
 ## Blockquotes
@@ -100,20 +112,22 @@ This line features `Inline code`.
 
 ### Fenced Code Block
 Use triple backticks to denote a code block containing multiple lines. After the opening backticks, you can also specify the coding language. Some advanced markdown renderers will apply the appropriate syntax highlighting for that language.
-
-  \`\`\`bash<br>
-  echo "Hello World"<br>
-  \`\`\`<br>
-
+<pre><code>```Fortran
+program hello
+    print *, 'Hello, World!'
+end program hello
+```</code></pre>
 Rendered:
-```bash
-echo "Hello World"
+```Fortran
+program hello
+    print *, 'Hello, World!'
+end program hello
 ```
 ## Tables
-To create a table use pipes (|) to create columns in your plain text. You can use a row of dashes to separate column headers from the rest of the body. 
+To create a table, use pipes (|) to create columns in your plain text. You can use a row of dashes to separate column headers from the rest of the body. 
 >Note: Markdown expects a row of column headers and does not always work correctly if that is not supplied. 
 
-Columns do not need to line up neatly as shown in order to render correctly, however an important goal of markdown language is that the unrendered text still be human readable. Therefore, it is good practice to make tidy tables in the unrendered text.
+Columns do not need to line up as neatly as shown in order to render correctly, however an important goal of markdown language is that the unrendered text still be human readable. Therefore, it is good practice to make tidy tables in the unrendered text.
 ```markdown
 | Header 1 | Header 2 | Header 3 |
 |----------|----------|----------|
@@ -147,6 +161,7 @@ You can attach downloadable files. The syntax is the same as any other web link.
 ```
 
 Rendered:
+
 [Download The Guide](./LabGuide.pdf)
 
 # Special Extensions for Skytap
@@ -169,9 +184,9 @@ This will allow you to include the contents of any other file within your docume
 
 or to even include text, sample files, or code.
 
-\`\`\`python<br>
-::: include MyScript.py :::<br>
-\`\`\`<br>
+```python
+::: include MyScript.py :::
+```
 
 This will insert the entire content of that other file at that point.
 
