@@ -93,11 +93,10 @@ Rendered:
 ## Blockquotes
 ```markdown
 > This is a blockquote.
-> It can span multiple lines.
 ```
 Rendered:
-> This is a blockquote.
-> It can span multiple lines.
+>This is a blockquote.
+
 
 ## Code Blocks
 Code blocks are sections of text that represent source code or terminal commands. These will be rendered in an off-color background as indented monospaced text, to appear more like plain text. This makes code much more readable.
@@ -111,7 +110,7 @@ Rendered:
 This line features `Inline code`.
 
 ### Fenced Code Block
-Use triple backticks to denote a code block containing multiple lines. After the opening backticks, you can also specify the coding language. Some advanced markdown renderers will apply the appropriate syntax highlighting for that language.
+Use triple backticks to denote a code block containing multiple lines. After the opening backticks, you can also specify the coding language. Some markdown interpreters will apply the appropriate syntax highlighting for that language.
 <pre><code>```Fortran
 program hello
     print *, 'Hello, World!'
@@ -154,7 +153,7 @@ Rendered:
 ___
 
 ## Attachments
-You can attach downloadable files. The syntax is the same as any other web link. If you reference a link to your local file system, the publish script will upload the file to Skytap and properly reformat the link to download the file from Skytap. You could also just reference a link to an ordinary web page
+You can attach downloadable files. The syntax is the same as any other web link. If you reference a link to your local file system, the Skytap publishing script will upload the file to Skytap and properly reformat the link to allow the user to download the file from Skytap. You could also just reference a link to an ordinary web page
 
 ```markdown
 [Download The Guide](./LabGuide.pdf)
@@ -175,7 +174,7 @@ Page breaks are necessary in Skytap because the space to display the manual is s
 ```
 
 ## Include Files
-This will allow you to include the contents of any other file within your document. Use this to break large lab manuals into multiple files
+This will allow you to include the contents of any other file within your document. Use this to break large lab manuals into multiple files.
 ```markdown
 ::: include exercise1.md :::
 ::: include exercise2.md :::
@@ -183,12 +182,9 @@ This will allow you to include the contents of any other file within your docume
 ```
 
 or to even include text, sample files, or code.
-
-```python
+<pre><code>```python
 ::: include MyScript.py :::
-```
-
-This will insert the entire content of that other file at that point.
+```</code></pre>
 
 ## Copyable Text
 To denote text that can be copied from the guide into the Skytap machine by clicking on it, use double carets `^^` around the text. For example:
