@@ -1,8 +1,8 @@
 # Markdown Instructions
-Markdown is simple markup language most commonly used for documentation.  It allows a plain text document to contain formatting markups that are simpler to use than HTML and leave the text file in a format that is still human readable.  Using a markup language allows for documents to contain rich formatting, but take all style decisions away from the author.  Style choices configured in the markdown interpreter that will render the document into HTML.  This allows for multiple authors to use consistent formatting choices across all documentation and to work in a file format that is completely platform independent.
+Markdown is simple markup language most commonly used for documentation.  It allows a plain text document to contain formatting markups that are similar to but easier to use than HTML and leave the text file in a format that is still human readable.  Using a markup language allows for documents to contain rich formatting, but take all style decisions away from the author.  Style choices are configured in the markdown interpreter that will render the document into HTML.  This allows for multiple authors to use consistent formatting choices across all documentation and to work in a file format that is completely platform independent.
 
 ## Headings
-Use # to denote a heading. You can add more #s to decrease the heading level. Note markdown requires a space after the #. While some markdown interpreters will render a heading appropriately if the space is omitted, a # without a space may be interpreted as a #hashtag.
+Use # to denote a heading. You can add more #s to decrease the heading level. Note markdown requires a spae after the #. While some markdown interpreters will render a heading appropriately if the space is omitted, a # without a space may be interpreted as a #hashtag.
 
 ```markdown
 # Heading 1
@@ -153,7 +153,7 @@ Rendered:
 ___
 
 ## Attachments
-You can attach downloadable files. The syntax is the same as any other web link. If you reference a link to your local file system, the Skytap publishing script will upload the file to Skytap and properly reformat the link to allow the user to download the file from Skytap. You could also just reference a link to an ordinary web page
+You can attach downloadable files. The syntax is the same as any other web link. If you reference a link to your local file system, the Skytap publishing script will upload the file to Skytap and properly reformat the link to allow the user to download the file from Skytap. You could also just reference a link to a downloadable file on any webpage.
 
 ```markdown
 [Download The Guide](./LabGuide.pdf)
@@ -164,7 +164,7 @@ Rendered:
 [Download The Guide](./LabGuide.pdf)
 
 # Special Extensions for Skytap
-Skytap Course Manager has several features that are not directly supported by the markdown language. You can, however, include raw HTML within a markdown file to accommodate those additional features. Unfortunately, that makes the unrendered text file difficult to read in violation of good markdown practice. To fix this the `md2html.py` script will replace these additional markups with the appropriate HTML before passing the file to markdown conversion function.
+Skytap Course Manager has several features that are not directly supported by the markdown language. You can, however, include raw HTML within a markdown file to accommodate those additional features. Unfortunately, that makes the unrendered text file difficult to read in violation of good markdown practice. To fix this, the `md2html.py` script will replace these following markups with the appropriate HTML before passing the file to markdown conversion function.
 >Note: The following features will not render appropriately in a standard markdown preview, but will work in both Skytap Course Manager and the PDF output.
 
 ## Page Break
@@ -188,10 +188,14 @@ or to even include text, sample files, or code.
 
 ## Copyable Text
 To denote text that can be copied from the guide into the Skytap machine by clicking on it, use double carets `^^` around the text. For example:
+
 ```markdown
 Please log in to the PVWA with the username ^^Administrator^^ and the password ^^Cyberark1^^
 ```
-Rendered: ![picture 1](images/Skytap-Copy-Block.png)  
+
+In Skytap: 
+
+![picture 1](images/Skytap-Copy-Block.png)  
 
 
 #TODO: Info and Warning Blocks
@@ -199,3 +203,16 @@ Rendered: ![picture 1](images/Skytap-Copy-Block.png)
 #TODO: Script and Command Buttons
 
 #TODO: Quizzes and other gates
+
+**Click** OK.  Press `ctrl-alt-del`.
+
+### Log on to your Tenant
+Browse to your tenant and log in.
+
+|   Parameter  | Value               |
+|--------------|---------------------|
+| **URL**      | ^^%{integration_data:app_url}^^ |
+| **Username** | ^^%{integration_data:app_uid}^^ |
+| **Password** | ^^%{integration_data:app_pw}^^  |
+
+::: pagebreak :::

@@ -2,6 +2,8 @@
 
 # %{course_name} Instruction Manual
 
+## Hi TC
+
 Welcome to the %{course_name}.  This lab environment is available for you to use 24x7 subject to the following limitations.
 
 - Lab environment will expire after **14 days**
@@ -35,10 +37,11 @@ Browse to your tenant and log in.
 ::: pagebreak :::
 
 ### Code Block Example
+^^
 ```python
 ::: include md2pdf.py :::
 ```
-
+^^
 ::: pagebreak :::
 
 ### Attachment Example
@@ -51,3 +54,21 @@ Browse to your tenant and log in.
 Thank you for completing the lab, please visit our [Training Portal](https://training.cyberark.com) to explore other CyberArk training offerings. 
 
 Feel free to use this environment as a sandbox until it expires.
+
+
+
+## Exercise 1
+
+### Log on to PVWA
+Log on with the following credentials.
+|      <!-- -->      |      <!-- -->      |
+|--------------------|-------------------|
+| **Username** | Administrator |
+| **Password**  | Cyberark1     |
+
+::: pagebreak :::
+
+### Search for Account
+Do this
+
+Picture
