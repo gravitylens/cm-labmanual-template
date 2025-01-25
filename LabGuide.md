@@ -2,8 +2,6 @@
 
 # %{course_name} Instruction Manual
 
-## Hi TC
-
 Welcome to the %{course_name}.  This lab environment is available for you to use 24x7 subject to the following limitations.
 
 - Lab environment will expire after **14 days**
