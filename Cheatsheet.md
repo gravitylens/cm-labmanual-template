@@ -206,19 +206,47 @@ In Skytap:
 
 ![picture 1](images/Skytap-Copy-Block.png)  
 
+## Info and Warning Blocks
+Info and warning blocks are similar to block quotes, however Skytap applies specific formatting to highlight the importance of the text.  A warning block will appear with a red background while an information block will appear with a green background.  Since the style is similar to a blockquote, this markup uses the same `>` notation as a block quote, but allows you to specify `warn` or `info`
+
+```markdown
+warn>This is a warning.
+info>This is a note.
+```
+
+In Skytap:
+
+![picture 2](images/Skytap-Info-Block.png)  
+
+
 ## Script and Command Buttons
-Script and Command Buttons allow the student to initiate action in the lab environment by clicking on a button in the lab manual.  This could include running a script that sets up the environment to be ready for future steps, or a script that validate previoius work have been completed successfully before allowing the student to move on.  The most convenient way to include a script or command button is to just include the necessary HTML for Skytap.  To understand the HTML, just add a command block in a Skytap manual via the manual editor and then switch to code view to find the HTML.
+Script and Command Buttons allow the student to initiate action in the lab environment by clicking on a button in the lab manual.  This could include running a script that prepares the environment to be ready for future steps, or a script that validate previoius work have been completed successfully before allowing the student to move on.  The most convenient way to include a script or command button is to just include the necessary HTML for Skytap.  To understand the HTML, just add a command block in a Skytap manual via the manual editor and then switch to code view to find the HTML.
 
 ```html
 <p>
-	<x-command contenteditable="false" data-activate="false" data-attempts="" data-blocking="" data-command='invoke "build"' data-command-type="system" data-description="This will rerun the provisioning script and attempt to build any missing resources" data-guid="d79aa5b1-cbb2-4a88-b96c-4ef26d3f4938" data-spinner="all" data-target="%{script_vm_host}" data-timeout="0" title="This will rerun the provisioning script and attempt to build any missing resources">Reattempt Provision</x-command>
+	<x-command 
+      contenteditable="false" 
+      data-activate="false" 
+      data-attempts="" 
+      data-blocking="" 
+      data-command='invoke "build"' 
+      data-command-type="system" 
+      data-description="This will rerun the provisioning script and attempt to build any missing resources" 
+      data-guid="d79aa5b1-cbb2-4a88-b96c-4ef26d3f4938" 
+      data-spinner="all" 
+      data-target="%{script_vm_host}" 
+      data-timeout="0" 
+      title="This will rerun the provisioning script and attempt to build any missing resources"
+    >
+        Reattempt Provision
+  </x-command>
 </p>
 ```
 
 In Skytap:
 
+![Reattempt Provision](images/Skytap-Command-Button.png)  
 
 
-#TODO: Info and Warning Blocks
 
 #TODO: Quizzes and other gates

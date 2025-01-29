@@ -11,7 +11,7 @@ Browse to your tenant and log in.
 | **Password** | ^^%{integration_data:app_pw}^^  |
 
 
->Warning: While this tenant is accessable from anywhere please only perform lab actions on lab machines.  Running steps on your own machine may damage your system.
+warn>Warning: While this tenant is accessable from anywhere please only perform lab actions on lab machines.  Running steps on your own machine may damage your system.
 
 If you are not seeing tenant details or have missing data click the `Reattempt Provision` button.  This will attempt to recreate any missing resources.
 

@@ -26,7 +26,6 @@ def include_files(content, depth=0, max_depth=5):
 with open("LabGuide.md", "r") as f:
     markdown_content = f.read()
 
-
 # Replace ::: include filename.md ::: with the content of the referenced file
 markdown_content = include_files(markdown_content)
 
@@ -35,6 +34,12 @@ markdown_content = re.sub(r'\[\\\\]: #.*', '', markdown_content)
 
 # Replace ::: pagebreak ::: with <hr data-page-break="">
 markdown_content = markdown_content.replace("::: pagebreak :::", "<hr data-page-break=\"\">")
+
+# Replace warn> lines with <x-block class="alert alert-danger">
+markdown_content = re.sub(r'^warn> (.*)$', r'<x-block class="alert alert-danger">\1</x-block>', markdown_content, flags=re.MULTILINE)
+
+# Replace info> lines with <x-block class="alert alert-warning">
+markdown_content = re.sub(r'^info> (.*)$', r'<x-block class="alert alert-warning">\1</x-block>', markdown_content, flags=re.MULTILINE)
 
 # Convert Markdown to HTML with table support, code highlighting, and fenced code blocks
 html_content = markdown.markdown(markdown_content, extensions=['tables', 'codehilite', 'fenced_code'])
