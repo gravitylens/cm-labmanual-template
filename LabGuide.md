@@ -2,8 +2,6 @@
 
 # %{course_name} Instruction Manual
 
-## Hi TC
-
 Welcome to the %{course_name}.  This lab environment is available for you to use 24x7 subject to the following limitations.
 
 - Lab environment will expire after **14 days**
@@ -13,6 +11,8 @@ Welcome to the %{course_name}.  This lab environment is available for you to use
 >Warning: Once the lab has expired it will be automatically deleted and cannot be recovered.
 
 ::: pagebreak :::
+
+::: include tenantinfo.md :::
 
 ::: include SkytapTips.md :::
 
@@ -55,20 +55,6 @@ Thank you for completing the lab, please visit our [Training Portal](https://tra
 
 Feel free to use this environment as a sandbox until it expires.
 
-
-
-## Exercise 1
-
-### Log on to PVWA
-Log on with the following credentials.
-|      <!-- -->      |      <!-- -->      |
-|--------------------|-------------------|
-| **Username** | Administrator |
-| **Password**  | Cyberark1     |
-
-::: pagebreak :::
-
-### Search for Account
-Do this
-
-Picture
+<p>
+	<x-command contenteditable="false" data-activate="false" data-attempts="" data-blocking="" data-command='invoke "build"' data-command-type="system" data-description="This will rerun the provisioning script and attempt to build any missing resources" data-guid="d79aa5b1-cbb2-4a88-b96c-4ef26d3f4938" data-spinner="all" data-target="%{script_vm_host}" data-timeout="0" title="This will rerun the provisioning script and attempt to build any missing resources">Reattempt Provision</x-command>
+</p>
