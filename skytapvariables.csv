@@ -4,6 +4,6 @@ placeholder,testvalue
 %{user_identifier},
 %{password},"Shar1ngP0rtalP@ssw0rd"
 %{template_name},
-%{integration_data:app_url},
-%{integration_data:app_uid},
-%{integration_data:app_pw},
+%{integration_data:app_url},"Sample Value"
+%{integration_data:app_uid},"Sample Value"
+%{integration_data:app_pw},"Sample Value"

@@ -36,19 +36,13 @@ markdown_content = re.sub(r'\[\\\\]: #.*', '', markdown_content)
 markdown_content = markdown_content.replace("::: pagebreak :::", "<hr data-page-break=\"\">")
 
 # Replace warn> lines with <x-block class="alert alert-danger">
-markdown_content = re.sub(r'^warn> (.*)$', r'<x-block class="alert alert-danger">\1</x-block>', markdown_content, flags=re.MULTILINE)
+markdown_content = re.sub(r'^warn>(.*)$', r'<x-block class="alert alert-danger">\1</x-block>', markdown_content, flags=re.MULTILINE)
 
 # Replace info> lines with <x-block class="alert alert-warning">
-markdown_content = re.sub(r'^info> (.*)$', r'<x-block class="alert alert-warning">\1</x-block>', markdown_content, flags=re.MULTILINE)
+markdown_content = re.sub(r'^info>(.*)$', r'<x-block class="alert alert-warning">\1</x-block>', markdown_content, flags=re.MULTILINE)
 
 # Convert Markdown to HTML with table support, code highlighting, and fenced code blocks
 html_content = markdown.markdown(markdown_content, extensions=['tables', 'codehilite', 'fenced_code'])
-
-# Replace <code> blocks with <pre> blocks
-#html_content = html_content.replace("<code>", "<pre>").replace("</code>", "</pre>")
-
-# Replace ~text~ with <x-copy-text> tags
-html_content = re.sub(r'~([^~]+)~', r'<x-copy-text>\1</x-copy-text>', html_content)
 
 # Replace ^^text^^ with <x-copy-text> tags
 html_content = re.sub(r'\^\^([^\^]+)\^\^', r'<x-copy-text>\1</x-copy-text>', html_content)

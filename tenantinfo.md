@@ -4,14 +4,14 @@ We have provisioned a tenant for you.  You will be able to access the tenant usi
 ### Log on to your Tenant
 Browse to your tenant and log in.
 
-|   Parameter  | Value               |
-|--------------|---------------------|
+| Parameter    | Value                           |
+|--------------|---------------------------------|
 | **URL**      | ^^%{integration_data:app_url}^^ |
 | **Username** | ^^%{integration_data:app_uid}^^ |
 | **Password** | ^^%{integration_data:app_pw}^^  |
 
 
-warn>Warning: While this tenant is accessable from anywhere please only perform lab actions on lab machines.  Running steps on your own machine may damage your system.
+warn>Warning: While this tenant is accessible from anywhere please only perform lab actions on lab machines.  Running steps on your own machine may damage your system.
 
 If you are not seeing tenant details or have missing data click the `Reattempt Provision` button.  This will attempt to recreate any missing resources.
 

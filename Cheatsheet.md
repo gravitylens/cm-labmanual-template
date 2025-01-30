@@ -247,6 +247,4 @@ In Skytap:
 
 ![Reattempt Provision](images/Skytap-Command-Button.png)  
 
-
-
 #TODO: Quizzes and other gates
