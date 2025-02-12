@@ -22,9 +22,6 @@ You can shrink the size of the right panel to allow more space for the virtual m
 
 If images are too small as a result. Click on the image to see it full screen.
 
-
-[\\]: #TODO: Improve this screenshot with arrows.
-
 #### Pop out the Guide
 **Popout** the Guide to move it another browser tab or even another device.
 
