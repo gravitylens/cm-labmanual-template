@@ -4,7 +4,7 @@
 source .venv/bin/activate
 
 # Create the HTML
-python3 md2html.py manualfiles/LabGuide.md
+python3 md2html.py
 
 # Create the PDF
 python3 md2pdf.py
