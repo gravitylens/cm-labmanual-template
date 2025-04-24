@@ -13,7 +13,7 @@ def include_files(content, depth=0, max_depth=5):
             break
         filename = match.group(1)
         try:
-            with open(filename, 'r') as f:
+            with open(filename, 'r', encoding='utf-8') as f:
                 included_content = f.read()
             included_content = include_files(included_content, depth + 1, max_depth)
             content = content[:match.start()] + included_content + content[match.end():]
@@ -23,7 +23,7 @@ def include_files(content, depth=0, max_depth=5):
     return content
 
 # Read the Markdown file
-with open("LabGuide.md", "r") as f:
+with open("LabGuide.md", "r", encoding="utf-8") as f:
     markdown_content = f.read()
 
 # Replace ::: include filename.md ::: with the content of the referenced file
@@ -48,5 +48,5 @@ html_content = markdown.markdown(markdown_content, extensions=['tables', 'codehi
 html_content = re.sub(r'\^\^([^\^]+)\^\^', r'<x-copy-text>\1</x-copy-text>', html_content)
 
 # Write the HTML to a file
-with open("LabGuide.html", "w") as f:
+with open("LabGuide.html", "w", encoding="utf-8") as f:
     f.write(html_content)
