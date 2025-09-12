@@ -10,7 +10,7 @@ pdf_config_file = '.pdf_config.yml'
 pdf_file = None
 
 if os.path.exists(pdf_config_file):
-    with open(pdf_config_file, 'r', encoding='utf-8') as file:
+    with open(pdf_config_file, 'r') as file:
         config = yaml.safe_load(file)
         pdf_file = config.get('pdf_file')
 
@@ -18,12 +18,12 @@ if os.path.exists(pdf_config_file):
 if not pdf_file:
     pdf_file = input("Enter the name for the PDF file (e.g., LabGuide.pdf): ")
     # Save the PDF file name to .pdf_config.yml
-    with open(pdf_config_file, 'w', encoding='utf-8') as file:
+    with open(pdf_config_file, 'w') as file:
         config = {'pdf_file': pdf_file}
         yaml.safe_dump(config, file)
 
 # Read the CSS file
-with open("/Users/jason.niles/Projects/cm-labmanual-template/styles.css", "r", encoding='utf-8') as file:
+with open("/Users/jason.niles/Projects/cm-labmanual-template/styles.css", "r", encoding='utf-8') as file:  # Ensure UTF-8 encoding
     css_content = file.read()
 
 # Replace the placeholder with the current year
@@ -31,7 +31,7 @@ current_year = datetime.now().year
 css_content = css_content.replace("YEAR_PLACEHOLDER", str(current_year))
 
 # Write the updated CSS back to the file
-with open("/Users/jason.niles/Projects/cm-labmanual-template/styles.css", "w", encoding='utf-8') as file:
+with open("/Users/jason.niles/Projects/cm-labmanual-template/styles.css", "w") as file:
     file.write(css_content)
 
 # Load CSS from external file
@@ -40,12 +40,12 @@ css = CSS(filename=css_file)
 
 # Read the HTML file
 html_file = 'LabGuide.html'
-with open(html_file, 'r', encoding='utf-8') as f:
+with open(html_file, 'r', encoding='utf-8') as f:  # Ensure UTF-8 encoding
     html_content = f.read()
 
 # Load Skytap variables from skytapvariables.csv
 variables = {}
-with open('skytapvariables.csv', mode='r', encoding='utf-8') as infile:
+with open('skytapvariables.csv', mode='r', encoding='utf-8') as infile:  # Ensure UTF-8 encoding
     reader = csv.reader(infile)
     for rows in reader:
         variables[rows[0]] = rows[1]
@@ -59,11 +59,11 @@ pdf_content = re.sub(r'\^\^([^\^]+)\^\^', r'<x-copy-text>\1</x-copy-text>', html
 
 # Write the modified content to a temporary file for PDF generation
 temp_html_file = 'LabGuide_for_pdf.html'
-with open(temp_html_file, 'w', encoding='utf-8') as f:
+with open(temp_html_file, 'w', encoding='utf-8') as f:  # Ensure UTF-8 encoding
     f.write(pdf_content)
 
 # Convert HTML to PDF with CSS
-HTML(temp_html_file).write_pdf(pdf_file, stylesheets=[css])
+HTML(temp_html_file, encoding='utf-8').write_pdf(pdf_file, stylesheets=[css])  # Ensure UTF-8 encoding
 print(f"PDF file '{pdf_file}' has been created successfully.")
 
 # Clean up the temporary file
