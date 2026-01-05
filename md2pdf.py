@@ -23,7 +23,7 @@ if not pdf_file:
         yaml.safe_dump(config, file)
 
 # Read the CSS file
-with open("/Users/jason.niles/Projects/cm-labmanual-template/styles.css", "r", encoding='utf-8') as file:  # Ensure UTF-8 encoding
+with open("./styles.css", "r", encoding='utf-8') as file:  # Ensure UTF-8 encoding
     css_content = file.read()
 
 # Replace the placeholder with the current year
@@ -31,7 +31,7 @@ current_year = datetime.now().year
 css_content = css_content.replace("YEAR_PLACEHOLDER", str(current_year))
 
 # Write the updated CSS back to the file
-with open("/Users/jason.niles/Projects/cm-labmanual-template/styles.css", "w") as file:
+with open("./styles.css", "w") as file:
     file.write(css_content)
 
 # Load CSS from external file
