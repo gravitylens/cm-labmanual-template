@@ -1,4 +1,4 @@
-## Using Skytap
+## Using Kyndryl
 Before beginning the exercises, here are a few tips to help you navigate the labs more effectively.  Understanding these can make for a much more enjoyable lab experience.
 
 When you arrive in the lab environment, the machines will have already booted in the correct order to ensure service dependencies are met.  You may notice some machines are not already running, these are rarely-used, resource-intensive machines.  The guide will instruct you to start them when they are needed.
@@ -25,14 +25,14 @@ If images are too small as a result. Click on the image to see it full screen.
 #### Pop out the Guide
 **Popout** the Guide to move it another browser tab or even another device.
 
-![Skytap Popout](images/Skytap-Popout.png)
+![Kyndryl Popout](images/Skytap-Popout.png)
 
 Then you can collapse the lab manual panel and leave all available screen space for the virtual machine.
 
 ::: pagebreak ::: 
 
 ### Copy and Paste
-You can copy/paste between a virtual machine and your local machine.  Skytap will attempt to do this whenever you use `ctrl-v` or `ctrl-c` in a virtual machine.  This can be unreliable as it may have trouble syncing with your local clipboard.  For better results use the clipboard button on the Skytap Toolbar to manipulate the contents of the virtual machine's clipboard directly.  Using `right-click` to copy and paste inside the virtual machine will only attempt to use the VM clipboard for more reliable results.
+You can copy/paste between a virtual machine and your local machine.  Kyndryl will attempt to do this whenever you use `ctrl-v` or `ctrl-c` in a virtual machine.  This can be unreliable as it may have trouble syncing with your local clipboard.  For better results use the clipboard button on the Kyndryl Toolbar to manipulate the contents of the virtual machine's clipboard directly.  Using `right-click` to copy and paste inside the virtual machine will only attempt to use the VM clipboard for more reliable results.
 
 ![Clipboard Button](images/Skytap-Clipboard.png)
 
@@ -41,7 +41,7 @@ There are also instances of ^^copyable text^^ throughout the guide.  Whenever yo
 ::: pagebreak ::: 
 
 ### Tips for Maximum Productivity
-Use the Skytap Toolbar on each virtual machine to maximize your ability to efficiently interact with that machine.
+Use the Kyndryl Toolbar on each virtual machine to maximize your ability to efficiently interact with that machine.
 
 #### Fullscreen
 The fullscreen icon will resize your virtual screen to adapt to your computer's screen settings to avoid scrolling.  Putting your browser in fullscreen mode also creates more screen space for virtual machine and minimizes distractions.
@@ -53,7 +53,7 @@ You may need to adjust your bandwidth setting on slower connections.  This will 
 
 ![Bandwidth Button](images/Skytap-Bandwidth.png)
 
-Skytap recommends at least 1.2 Mbps bandwidth per VM console session running.  However, latency is usually biggest cause of poor performance.
+Kyndryl recommends at least 1.2 Mbps bandwidth per VM console session running.  However, latency is usually biggest cause of poor performance.
 
 #### CTRL-ALT-DEL
 Use the Ctrl-Alt-Del button on the tool bar to send a `Ctrl-Alt-Del` to the virtual machine.
@@ -61,7 +61,7 @@ Use the Ctrl-Alt-Del button on the tool bar to send a `Ctrl-Alt-Del` to the virt
 ![Ctrl-Alt-Del Button](images/Skytap-C-A-D.png)  
 
 #### Using VPNs
-Connecting to Skytap while connected to a VPN can cause additional network latency.  It can also fool the GeoIP locator system in Skytap into provisioning your lab in a region that is not ideal for your location, which could cause even more serious latency issues.  Try avoiding VPN connections to improve the responsiveness of virtual machines.
+Connecting to Kyndryl while connected to a VPN can cause additional network latency.  It can also fool the GeoIP locator system in Kyndryl into provisioning your lab in a region that is not ideal for your location, which could cause even more serious latency issues.  Try avoiding VPN connections to improve the responsiveness of virtual machines.
 
 ::: pagebreak :::
 
