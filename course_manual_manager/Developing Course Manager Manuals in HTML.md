@@ -1,3 +1,8 @@
+---
+aliases:
+  - HTML Manuals
+---
+
 # Developing Course Manager Manuals in HTML
 
 ## Introduction

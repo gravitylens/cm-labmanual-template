@@ -8,7 +8,7 @@ By using this tool, you can upload, publish or delete a HTML-based course manual
 
 ## Developing the Manual Content
 
-To learn more about developing Manual content in HTML, please see the [Course Manual HTML guide](course_manual_html_guide.md).
+To learn more about developing Manual content in HTML, please see the [Course Manual HTML guide](Developing%20Course%20Manager%20Manuals%20in%20HTML.md).
 
 ### Images and attachments
 
@@ -47,6 +47,18 @@ Please note that when the manual is uploaded without being published, the draft 
 **--publish**: Publishes the uploaded manual. This can be a manual uploaded previously with the **--upload** option, or can be used along with **--upload** to upload and publish in one step.
 
 If no command line arguments are specified, **--delete --upload --publish** is assumed.
+
+### Non-interactive configuration
+
+For scripted or automated use (e.g. publishing to multiple courses in a loop), all configuration values can be passed as command line arguments instead of being read from `.publish.yml` or prompted for interactively:
+
+* **--html-file**: Path to your Manual HTML file
+* **--app-hostname**: Your organization's Course Manager hostname (e.g. customername.skytap-portal.com)
+* **--course-id**: The ID of the course for which you wish to publish the manual
+* **--api-key**: Course Manager API key
+* **--api-secret**: Course Manager API secret
+
+Any of these values not supplied on the command line fall back to `.publish.yml` or an interactive prompt, as described below.
 
 ### Interactive configuration
 The first time you run the tool in a particular directory, it will prompt you for the following details to publish your Manual:

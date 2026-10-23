@@ -2,6 +2,8 @@
 
 # %{course_name} Instruction Manual
 
+![image](https://cautrainstore.blob.core.windows.net/cau-common-img/cau-test-img1.jpg)
+
 Welcome to the %{course_name}.  This lab environment is available for you to use 24x7 subject to the following limitations.
 
 - Lab environment will expire after **14 days**.
@@ -23,9 +25,6 @@ Describe the story or scenario that will play out in the lab exercises.
 ::: include exercise1.md :::
 ::: include exercise2.md :::
 ::: include exercise3.md :::
-
-### Attachment Example
-[Download the Guide](./LabGuide.pdf)
 
 ::: pagebreak :::
 

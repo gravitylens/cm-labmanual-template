@@ -28,6 +28,12 @@ cli_opts =
       o.boolean "--upload", "Upload draft (implies --delete)"
       o.boolean "--publish", "Publish draft"
 
+      o.string "--html-file", "Path to HTML file"
+      o.string "--app-hostname", "Course Manager hostname (e.g. customername.skytap-portal.com)"
+      o.string "--course-id", "Target course's numeric ID (from end of course URL)"
+      o.string "--api-key", "Course Manager API key"
+      o.string "--api-secret", "Course Manager API secret"
+
       o.on "-h", "--help" do
         puts o.to_s
         puts "Specifying no options implies --delete --upload --publish"
@@ -39,26 +45,35 @@ cli_opts =
     exit 1
   end.to_hash.symbolize_keys
 
+config_opts_from_cli = cli_opts.slice(*CONFIG_OPTIONS.keys).reject {|_, v| v.nil?}
+cli_opts = cli_opts.reject {|k, _| CONFIG_OPTIONS.key? k}
+
 cli_opts.merge!(
   delete: true,
   upload: true,
   publish: true
 ) unless cli_opts.any? {|k,v| v == true}
 
-opts =
+persisted_opts =
   if File.exist?(CONFIG_FILE_NAME)
     YAML.load_file(CONFIG_FILE_NAME).symbolize_keys
   else
-    puts "Creating configuration file in #{File.join(Dir.pwd, CONFIG_FILE_NAME)}."
     {}
   end
 
-CONFIG_OPTIONS.each do |key, prompt|
-  next if opts.key? key
+needs_prompt = CONFIG_OPTIONS.keys.any? {|key| !config_opts_from_cli.key?(key) && !persisted_opts.key?(key)}
+puts "Creating configuration file in #{File.join(Dir.pwd, CONFIG_FILE_NAME)}." if needs_prompt && persisted_opts.empty?
 
-  opts[key] = prompt_for(prompt)
+CONFIG_OPTIONS.each do |key, prompt|
+  next if config_opts_from_cli.key? key
+  next if persisted_opts.key? key
+
+  persisted_opts[key] = prompt_for(prompt)
 end
+
+opts = persisted_opts.merge(config_opts_from_cli)
 
 CourseManualManager.new(**opts.to_hash.merge(cli_opts)).publish
 
-File.write(CONFIG_FILE_NAME, opts.stringify_keys.to_yaml)
+# values supplied on the command line are used for this run only, never written to disk
+File.write(CONFIG_FILE_NAME, persisted_opts.stringify_keys.to_yaml) unless persisted_opts.empty?

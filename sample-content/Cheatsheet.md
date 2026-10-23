@@ -19,7 +19,7 @@ Rendered:
 #### Heading 4
 ##### Heading 5
 ###### Heading 6
-> Note: Some markdown interpreters will render a horizontal line below some headings.  Skytap will not do this.  The PDF may or may not contain this depending on CSS settings.
+> Note: Some markdown interpreters will render a horizontal line below some headings.  Skytap will not do this.
 
 ## Text Formatting
 ```markdown
@@ -82,7 +82,7 @@ Rendered:
 [Link text](https://www.cyberark.com)
 
 ### Image
-When including images, do not bother resizing them to fit the screen.  Use files that contain the full resolution of the screen capture.  Skytap and the PDF rendering script will resize images to best fit the available space.  Skytap will also allow the user to pop out to fullscreen images that cannot be displayed readably within the lab guide panel.  These fullscreen images will need the maxiumum quality possible.
+When including images, do not bother resizing them to fit the screen.  Use files that contain the full resolution of the screen capture.  Skytap will resize images to best fit the available space.  Skytap will also allow the user to pop out to fullscreen images that cannot be displayed readably within the lab guide panel.  These fullscreen images will need the maxiumum quality possible.
 ```markdown
 ![Alt text](https://www.cyberark.com/wp-content/uploads/2024/10/cyberark-logo.svg)
 ```
@@ -165,16 +165,16 @@ ___
 You can attach downloadable files. The syntax is the same as any other web link. If you reference a link to your local file system, the Skytap publishing script will upload the file to Skytap and properly reformat the link to allow the user to download the file from Skytap. You could also just reference a link to a downloadable file on any webpage.
 
 ```markdown
-[Download The Guide](./LabGuide.pdf)
+[Download The Guide](./files/supplemental-guide.pdf)
 ```
 
 Rendered:
 
-[Download The Guide](./LabGuide.pdf)
+[Download The Guide](./files/supplemental-guide.pdf)
 
 # Special Extensions for Skytap
 Skytap Course Manager has several features that are not directly supported by the markdown language. You can, however, include raw HTML within a markdown file to accommodate those additional features. Unfortunately, that makes the unrendered text file difficult to read in violation of good markdown practice. To fix this, the `md2html.py` script will replace these following markups with the appropriate HTML before passing the file to markdown conversion function.
->Note: The following features will not render appropriately in a standard markdown preview, but will work in both Skytap Course Manager and the PDF output.
+>Note: The following features will not render appropriately in a standard markdown preview, but will work in Skytap Course Manager.
 
 ## Page Break
 Page breaks are necessary in Skytap because the space to display the manual is so small. Skytap tracks progress through the various pages of the lab manual through the "Mark Done and Continue" button it places at the end of every page. Skytap also makes a dynamic table of contents page based on these page breaks. Use frequent page breaks to make the manual more readable and navigable.

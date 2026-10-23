@@ -1,0 +1,4 @@
+targets:
+  - name: test
+    source: LabGuide.md
+    course_id: "590"
