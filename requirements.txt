@@ -1,3 +1,6 @@
 markdown
 PyYAML
 python-dotenv
+transformers
+torch
+sentencepiece

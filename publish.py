@@ -38,6 +38,11 @@ def load_manifest(content_dir):
             if key not in target:
                 sys.exit(f"manifest.yml target is missing required key: {key}")
 
+        for translation in target.get("translations", []):
+            for key in ("language", "course_id"):
+                if key not in translation:
+                    sys.exit(f"manifest.yml translation is missing required key: {key}")
+
     return manifest
 
 
@@ -64,6 +69,18 @@ def publish_target(content_dir, html_path, target, app_hostname, api_key, api_se
 
     result = subprocess.run(command)
     return result.returncode == 0
+
+
+def convert_and_publish(content_dir, source_path, course, app_hostname, api_key, api_secret, draft):
+    fd, output_path = tempfile.mkstemp(suffix=".html", dir=content_dir)
+    os.close(fd)
+
+    try:
+        print(f"Converting {source_path} -> {output_path}")
+        md2html.convert(source_path, output_path)
+        return publish_target(content_dir, output_path, course, app_hostname, api_key, api_secret, draft)
+    finally:
+        os.remove(output_path)
 
 
 def main():
@@ -97,18 +114,24 @@ def main():
 
     results = {}
     for target in targets:
+        print(f"\nPublishing to target '{target['name']}' ({app_hostname}, course {target['course_id']})...")
         source_path = os.path.join(args.content_dir, target["source"])
-        fd, output_path = tempfile.mkstemp(suffix=".html", dir=args.content_dir)
-        os.close(fd)
+        results[target["name"]] = convert_and_publish(args.content_dir, source_path, target, app_hostname, api_key, api_secret, args.draft)
 
-        try:
-            print(f"Converting {source_path} -> {output_path}")
-            md2html.convert(source_path, output_path)
+        if args.draft or not target.get("translations"):
+            continue
 
-            print(f"\nPublishing to target '{target['name']}' ({app_hostname}, course {target['course_id']})...")
-            results[target["name"]] = publish_target(args.content_dir, output_path, target, app_hostname, api_key, api_secret, args.draft)
-        finally:
-            os.remove(output_path)
+        import translate
+
+        for translation in target["translations"]:
+            language = translation["language"]
+            result_key = f"{target['name']} ({language})"
+            print(f"\nTranslating '{target['name']}' to '{language}'...")
+
+            translated_source_path = translate.translate_target_language(args.content_dir, target, translation)
+
+            print(f"\nPublishing to target '{result_key}' ({app_hostname}, course {translation['course_id']})...")
+            results[result_key] = convert_and_publish(args.content_dir, translated_source_path, translation, app_hostname, api_key, api_secret, draft=False)
 
     print("\nPublish summary:")
     all_succeeded = True

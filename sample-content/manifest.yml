@@ -1,4 +1,15 @@
 targets:
-  - name: test
+  - name: "Orchestation Test Course"
     source: LabGuide.md
     course_id: "590"
+    translations:
+    - language: de
+      course_id: "591"
+    - language: fr
+      course_id: "592"
+    - language: es
+      course_id: "593"
+    - language: he
+      course_id: "594"
+    - language: zh
+      course_id: "595"

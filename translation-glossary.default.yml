@@ -1,0 +1,50 @@
+# Terms that should never be translated, shared across all content folders.
+# Content folders may add their own terms in a local translation-glossary.yml,
+# which is merged with (not a replacement for) this list.
+- Skytap
+- Course Manager
+- API
+- URL
+- HTML
+- CSS
+- JSON
+- YAML
+- Markdown
+- Docker
+- Kubernetes
+- SSH
+- RDP
+- VPN
+- IP
+- CLI
+- SDK
+- VM
+- OS
+- CPU
+- GPU
+- RAM
+- AWS
+- Azure
+- GCP
+- Linux
+- Windows
+- macOS
+- GitHub
+- Git
+- npm
+- Python
+- Ruby
+- REST
+- SaaS
+- DNS
+- OAuth
+- JWT
+- localhost
+- README
+- Idira
+- Privileged Access Manager
+- Administrator
+- Master
+- PVWA
+- Password Vault Web Access
+- PrivateArk Client

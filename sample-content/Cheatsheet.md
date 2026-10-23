@@ -195,6 +195,14 @@ or to even include text, sample files, or code.
 ::: include MyScript.py :::
 ```</code></pre>
 
+## Protecting Text From Translation
+If this content folder's manifest has `translations` configured, wrap a block of text in `::: notranslate :::` / `::: /notranslate :::` to publish it exactly as written in every language. The marker lines themselves are removed from the published guide.
+```markdown
+::: notranslate :::
+This text is published exactly as written in every language.
+::: /notranslate :::
+```
+
 ## Copyable Text
 To denote text that can be copied from the guide into the Skytap machine by clicking on it, use double carets `^^` around the text. For example:
 

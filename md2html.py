@@ -3,15 +3,21 @@ import os
 import markdown
 import re
 
+INCLUDE_PATTERN = re.compile(r'::: include (.+?) :::')
+
+
+def find_included_files(content):
+    """Return the (relative, unresolved) filenames referenced via ::: include ::: directives."""
+    return INCLUDE_PATTERN.findall(content)
+
 
 def include_files(content, base_dir, depth=0, max_depth=5):
     if depth > max_depth:
         print("Maximum include depth reached.")
         exit()
 
-    include_pattern = re.compile(r'::: include (.+?) :::')
     while True:
-        match = include_pattern.search(content)
+        match = INCLUDE_PATTERN.search(content)
         if not match:
             break
         # includes are resolved relative to the file that references them
@@ -36,6 +42,10 @@ def convert(source_path, output_path):
 
     # Remove comment lines
     markdown_content = re.sub(r'\[\\\\]: #.*', '', markdown_content)
+
+    # Strip ::: notranslate ::: / ::: /notranslate ::: markers, keeping the content between them
+    markdown_content = re.sub(r'^::: notranslate :::\n', '', markdown_content, flags=re.MULTILINE)
+    markdown_content = re.sub(r'^::: /notranslate :::\n', '', markdown_content, flags=re.MULTILINE)
 
     # Replace ::: pagebreak ::: with <hr data-page-break="">
     markdown_content = markdown_content.replace("::: pagebreak :::", "<hr data-page-break=\"\">")

@@ -4,3 +4,7 @@
 .env
 .publish.yml
 *.html
+PROJECT-NOTES.md
+
+# translated markdown is regenerated on every publish; keep translated images though
+**/translations/*/*.md
